@@ -1,0 +1,17 @@
+<i class="fa-regular fa-users"></i>
+<i class="fa-regular fa-euro-sign"></i>
+
+<h1>All our flats <%= @flats.count %></h1>
+
+<%= link_to "Offer a new flat", new_flat_path, class:"btn btn-primary btn-sm" %>
+
+<div class="cards">
+  <% @flats.each do | flat | %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= flat.picture %>)">
+    <%= flat.name %>
+    <%= flat.address %>
+    <%= flat.price_per_night %>
+    <%= flat.number_of_guests %>
+    <%=  link_to 'Show', flat_path(flat), class:"btn btn-primary btn-sm" %>
+  </div>
+  <% end %>

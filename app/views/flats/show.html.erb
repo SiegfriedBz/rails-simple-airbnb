@@ -1,0 +1,20 @@
+  <h2><%= @flat.name %></h2>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @flat.picture %>)">
+    <p>
+      <%= @flat.address %>
+    </p>
+    <p>
+      <%= @flat.description %>
+    </p>
+    <p>
+      <%= @flat.price_per_night %>
+    </p>
+    <p>
+      <%= @flat.number_of_guests %>
+    </p>
+    <%=  link_to 'Edit', edit_flat_path(@flat), class:"btn btn-primary btn-sm" %>
+    <%=  link_to 'Delete', flat_path(@flat), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-primary btn-sm" %>
+  </div>
+
+    <%=  link_to 'All flats', flats_path, class:"btn btn-primary btn-sm" %>
